@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "checks": {
+    "invalid_path_rejected": true,
+    "invalid_payload_rejected": true,
+    "arbitrary_url_field_rejected": true,
+    "runner_cannot_resolve_dvwa": true
+  }
+}

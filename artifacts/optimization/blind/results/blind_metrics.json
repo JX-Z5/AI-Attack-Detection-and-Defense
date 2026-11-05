@@ -1,0 +1,125 @@
+{
+  "study_role": "untouched_external_blind_test",
+  "sample_counts": {
+    "ai_agent": 100,
+    "human_like": 100,
+    "script": 100
+  },
+  "event_count": 2413,
+  "offline_ai_vs_human": {
+    "macro_precision": 0.864963503649635,
+    "macro_recall": 0.815,
+    "macro_f1": 0.8084439957547047,
+    "ai_recall": 0.63,
+    "human_false_positive_rate": 0.0,
+    "confusion_matrix": [
+      [
+        100,
+        0
+      ],
+      [
+        37,
+        63
+      ]
+    ],
+    "classification_report": {
+      "human_like": {
+        "precision": 0.7299270072992701,
+        "recall": 1.0,
+        "f1-score": 0.8438818565400844,
+        "support": 100.0
+      },
+      "ai_agent": {
+        "precision": 1.0,
+        "recall": 0.63,
+        "f1-score": 0.7730061349693251,
+        "support": 100.0
+      },
+      "accuracy": 0.815,
+      "macro avg": {
+        "precision": 0.864963503649635,
+        "recall": 0.815,
+        "f1-score": 0.8084439957547047,
+        "support": 200.0
+      },
+      "weighted avg": {
+        "precision": 0.864963503649635,
+        "recall": 0.815,
+        "f1-score": 0.8084439957547047,
+        "support": 200.0
+      }
+    },
+    "support": {
+      "human_like": 100,
+      "ai_agent": 100
+    },
+    "macro_f1_95_ci": {
+      "iterations": 1000,
+      "lower_95": 0.7570061685065839,
+      "upper_95": 0.8572011423908609
+    }
+  },
+  "offline_breakdown": {
+    "ai_recall_by_prompt_profile": {
+      "adaptive": 0.24,
+      "cautious": 0.6,
+      "exploratory": 0.8,
+      "methodical": 0.88
+    },
+    "ai_recall_by_attack_task": {
+      "sqli": 0.75,
+      "sqli_blind": 0.5
+    },
+    "human_false_positive_rate_by_profile": {
+      "bursty_recovery": 0.0,
+      "careful_backtrack": 0.0
+    }
+  },
+  "online_defense": {
+    "threshold": 0.7900000000000003,
+    "warmup_requests": 4,
+    "ai_block_rate": 0.85,
+    "script_block_rate": 0.13,
+    "human_false_block_rate": 0.0,
+    "mean_detection_request_count": {
+      "script": 5.3076923076923075,
+      "ai_agent": 4.094117647058823,
+      "human_like": null
+    },
+    "mean_detection_to_block_latency_ms": {
+      "script": 5795.059285305992,
+      "ai_agent": 4312.588235294118,
+      "human_like": null
+    },
+    "evaluated_sessions": 300,
+    "ai_block_rate_95_ci": {
+      "lower_95": 0.7671644040916763,
+      "upper_95": 0.9069401471634337
+    },
+    "human_false_block_rate_95_ci": {
+      "lower_95": 3.469446951953614e-18,
+      "upper_95": 0.03699349820698568
+    },
+    "ai_block_rate_by_prompt_profile": {
+      "adaptive": 0.52,
+      "cautious": 1.0,
+      "exploratory": 0.96,
+      "methodical": 0.92
+    },
+    "ai_block_rate_by_attack_task": {
+      "sqli": 0.9423076923076923,
+      "sqli_blind": 0.75
+    },
+    "script_block_rate_by_profile": {
+      "adaptive_order": 0.14,
+      "stealth_burst": 0.12
+    },
+    "human_false_block_rate_by_profile": {
+      "bursty_recovery": 0.0,
+      "careful_backtrack": 0.0
+    }
+  },
+  "frozen_bundle_sha256": "7ddc4054e02ba343463be4afeb4d3c4db874bbd700697923ab0c72ca3719fb3e",
+  "blind_events_sha256": "9e0cbe8880a419ca7002d09645f5b252a81c0ad5103f6c489591645f9b3bc0ee",
+  "thresholds_reused_without_blind_tuning": true
+}

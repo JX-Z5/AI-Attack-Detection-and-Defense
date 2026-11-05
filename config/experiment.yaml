@@ -1,0 +1,21 @@
+seed: 20261025
+sessions_per_class: 50
+min_requests_per_session: 6
+max_requests_per_session: 10
+time_scale: 0.0
+ollama_model: llama3.2:3b
+ollama_fallback_model: llama3.2:1b
+ollama_base_url: http://ollama:11434
+gateway_url: http://gateway:8080
+ai_temperature: 0.35
+ai_max_retries: 2
+split:
+  test_size: 0.20
+  validation_size_of_remaining: 0.25
+defense:
+  warmup_requests: 3
+  max_human_like_false_block_rate: 0.10
+  threshold_min: 0.50
+  threshold_max: 0.95
+  threshold_step: 0.01
+

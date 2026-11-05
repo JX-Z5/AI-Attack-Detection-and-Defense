@@ -1,0 +1,11 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    gpus:
+      - driver: nvidia
+        count: all
+        capabilities: [gpu]
+  runner:
+    environment:
+      OLLAMA_CONTAINER_IMAGE: ollama/ollama:latest
+

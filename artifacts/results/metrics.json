@@ -1,0 +1,281 @@
+{
+  "seed": 20261025,
+  "sample_counts": {
+    "ai_agent": 50,
+    "human_like": 50,
+    "script": 50
+  },
+  "split_counts": {
+    "train": 90,
+    "validation": 30,
+    "test": 30
+  },
+  "random_forest": {
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        0,
+        10
+      ]
+    ],
+    "classification_report": {
+      "script": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "ai_agent": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "human_like": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 30.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 30.0
+      }
+    }
+  },
+  "rule_baseline": {
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        0,
+        10
+      ]
+    ],
+    "classification_report": {
+      "script": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "ai_agent": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "human_like": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 30.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 30.0
+      }
+    }
+  },
+  "without_timing_features": {
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        0,
+        10
+      ]
+    ],
+    "classification_report": {
+      "script": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "ai_agent": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "human_like": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 30.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 30.0
+      }
+    }
+  },
+  "cross_validation_macro_f1": {
+    "mean": 1.0,
+    "std": 0.0,
+    "folds": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "defense_policy": {
+    "mode": "enforce",
+    "threshold": 0.9500000000000004,
+    "validation_ai_block_rate": 1.0,
+    "validation_human_false_block_rate": 0.0,
+    "selection_method": "causal_validation_prefixes"
+  },
+  "defense_test": {
+    "mode": "enforce",
+    "threshold": 0.9500000000000004,
+    "warmup_requests": 3,
+    "script_block_rate": 1.0,
+    "ai_block_rate": 1.0,
+    "human_false_block_rate": 0.0,
+    "mean_detection_request_count": {
+      "script": 1.0,
+      "ai_agent": 6.0,
+      "human_like": null
+    },
+    "mean_detection_to_block_latency_ms": {
+      "script": 0.0,
+      "ai_agent": 3442.0,
+      "human_like": null
+    },
+    "evaluated_sessions": 30,
+    "processed_requests": 152
+  },
+  "feature_importance": {
+    "requests_per_second": 0.14519311570778848,
+    "duration_ms": 0.13593041509941048,
+    "mean_interval_ms": 0.13290927328811375,
+    "unique_payload_ratio": 0.1303854969099131,
+    "std_interval_ms": 0.10161821713256833,
+    "error_rate": 0.09688898093749547,
+    "ua_anomaly_rate": 0.09315464658619074,
+    "mean_response_bytes": 0.08830327890464526,
+    "unique_path_ratio": 0.04548669479300662,
+    "repetition_rate": 0.02911443762728351,
+    "path_sequence_score": 0.0008862314569559938,
+    "request_count": 0.00012921155662824256
+  },
+  "classes": [
+    "ai_agent",
+    "human_like",
+    "script"
+  ],
+  "feature_columns": [
+    "request_count",
+    "mean_interval_ms",
+    "std_interval_ms",
+    "requests_per_second",
+    "duration_ms",
+    "unique_path_ratio",
+    "path_sequence_score",
+    "error_rate",
+    "repetition_rate",
+    "unique_payload_ratio",
+    "ua_anomaly_rate",
+    "mean_response_bytes"
+  ],
+  "test_session_ids": [
+    "human_like-013-20261025",
+    "human_like-029-20261025",
+    "human_like-005-20261025",
+    "script-005-20261025",
+    "script-041-20261025",
+    "ai_agent-018-20261025",
+    "script-035-20261025",
+    "ai_agent-029-20261025",
+    "ai_agent-012-20261025",
+    "human_like-039-20261025",
+    "script-018-20261025",
+    "ai_agent-021-20261025",
+    "human_like-043-20261025",
+    "script-017-20261025",
+    "ai_agent-002-20261025",
+    "script-009-20261025",
+    "script-014-20261025",
+    "human_like-045-20261025",
+    "ai_agent-042-20261025",
+    "script-012-20261025",
+    "script-045-20261025",
+    "ai_agent-026-20261025",
+    "human_like-020-20261025",
+    "human_like-010-20261025",
+    "human_like-012-20261025",
+    "ai_agent-045-20261025",
+    "ai_agent-034-20261025",
+    "ai_agent-039-20261025",
+    "human_like-021-20261025",
+    "script-042-20261025"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "pass",
+  "checks": {
+    "required_files_present": true,
+    "balanced_classes": true,
+    "metadata_counts_match": true,
+    "metrics_counts_match": true,
+    "unique_session_ids": true,
+    "no_missing_feature_values": true,
+    "no_identifier_or_label_leakage": true,
+    "model_feature_count_matches": true,
+    "model_classes_match": true,
+    "test_ids_match_predictions": true,
+    "defense_replay_uses_test_only": true,
+    "split_assignment_is_complete": true,
+    "split_assignment_is_unique": true,
+    "test_split_matches_metrics": true
+  },
+  "class_counts": {
+    "ai_agent": 50,
+    "human_like": 50,
+    "script": 50
+  },
+  "feature_columns": [
+    "request_count",
+    "mean_interval_ms",
+    "std_interval_ms",
+    "requests_per_second",
+    "duration_ms",
+    "unique_path_ratio",
+    "path_sequence_score",
+    "error_rate",
+    "repetition_rate",
+    "unique_payload_ratio",
+    "ua_anomaly_rate",
+    "mean_response_bytes"
+  ]
+}

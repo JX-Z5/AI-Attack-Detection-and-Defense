@@ -1,0 +1,53 @@
+{
+  "study_role": "final_generalization_experiment",
+  "seed": 20261102,
+  "session_counts": {
+    "ai_agent": 600,
+    "human_like": 600,
+    "script": 600
+  },
+  "event_count": 11726,
+  "ai_models": [
+    "llama3.2:3b",
+    "gemma3:4b",
+    "phi4-mini:3.8b",
+    "mistral:7b",
+    "granite3.3:2b",
+    "smollm2:1.7b"
+  ],
+  "prompt_profiles": [
+    "methodical",
+    "cautious",
+    "exploratory",
+    "adaptive"
+  ],
+  "attack_tasks": [
+    "sqli",
+    "sqli_blind"
+  ],
+  "script_profiles": [
+    "fixed_fast",
+    "fixed_slow",
+    "jitter_low",
+    "jitter_high",
+    "browser_fast",
+    "browser_slow",
+    "reordered",
+    "retrying"
+  ],
+  "human_profiles": [
+    "novice",
+    "methodical",
+    "impatient",
+    "cautious",
+    "repetitive",
+    "exploratory",
+    "direct",
+    "distracted"
+  ],
+  "ollama_version": "0.40.13",
+  "ollama_container_image": "ollama/ollama:latest",
+  "human_class": "human-like simulation",
+  "elapsed_seconds_this_run": 0.3094358444213867,
+  "failures": []
+}

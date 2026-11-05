@@ -1,0 +1,33 @@
+{
+  "study_role": "untouched_external_blind_test",
+  "finished_at_utc": "2026-11-02T04:58:17.529442+00:00",
+  "seed": 20261103,
+  "session_counts": {
+    "ai_agent": 100,
+    "human_like": 100,
+    "script": 100
+  },
+  "event_count": 2413,
+  "ai_model": "falcon3:3b",
+  "prompt_profiles": [
+    "methodical",
+    "cautious",
+    "exploratory",
+    "adaptive"
+  ],
+  "attack_tasks": [
+    "sqli",
+    "sqli_blind"
+  ],
+  "script_profiles": [
+    "stealth_burst",
+    "adaptive_order"
+  ],
+  "human_profiles": [
+    "bursty_recovery",
+    "careful_backtrack"
+  ],
+  "human_class": "human-like simulation",
+  "elapsed_seconds_this_run": 1098.3805894851685,
+  "failures": []
+}

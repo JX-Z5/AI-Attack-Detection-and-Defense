@@ -1,0 +1,105 @@
+name: ai-attack-lab
+
+services:
+  db:
+    image: mariadb:10
+    environment:
+      MYSQL_ROOT_PASSWORD: dvwa
+      MYSQL_DATABASE: dvwa
+      MYSQL_USER: dvwa
+      MYSQL_PASSWORD: p@ssw0rd
+    volumes:
+      - dvwa-db:/var/lib/mysql
+    networks: [target_net]
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  dvwa:
+    image: ghcr.io/digininja/dvwa:latest
+    environment:
+      DB_SERVER: db
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:4280:80"
+    networks: [target_net]
+    healthcheck:
+      test: ["CMD-SHELL", "php -r '$$c=@file_get_contents(\"http://127.0.0.1/login.php\"); exit($$c===false);'"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  ollama:
+    image: alpine/ollama:latest
+    volumes:
+      - ollama-models:/root/.ollama
+    ports:
+      - "127.0.0.1:11434:11434"
+    networks: [agent_net]
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  gateway:
+    build: .
+    image: ai-attack-lab:latest
+    command: ["python", "-m", "ai_lab.gateway"]
+    environment:
+      DVWA_BASE_URL: http://dvwa
+      GATEWAY_LOG_PATH: /app/artifacts/raw/gateway-events.jsonl
+      DEFENSE_ENABLED: ${DEFENSE_ENABLED:-false}
+      DEFENSE_MODEL_PATH: /app/artifacts/results/random_forest.joblib
+      DEFENSE_METADATA_PATH: /app/artifacts/results/model_metadata.json
+      DEFENSE_WARMUP_REQUESTS: 3
+    volumes:
+      - ./ai_lab:/app/ai_lab:ro
+      - ./artifacts:/app/artifacts
+    ports:
+      - "127.0.0.1:8080:8080"
+    depends_on:
+      dvwa:
+        condition: service_healthy
+    networks: [runner_net, target_net]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  runner:
+    image: ai-attack-lab:latest
+    environment:
+      AI_LAB_GATEWAY_URL: http://gateway:8080
+      OLLAMA_BASE_URL: http://ollama:11434
+      OLLAMA_CONTAINER_IMAGE: alpine/ollama:latest
+    volumes:
+      - ./ai_lab:/app/ai_lab:ro
+      - ./tests:/app/tests:ro
+      - ./artifacts:/app/artifacts
+      - ./config:/app/config:ro
+    depends_on:
+      gateway:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+    networks: [runner_net, agent_net]
+
+networks:
+  target_net:
+    internal: true
+  runner_net:
+    internal: true
+  agent_net:
+    internal: true
+
+volumes:
+  dvwa-db:
+  ollama-models:
+    name: ai_attack_lab_ollama
+

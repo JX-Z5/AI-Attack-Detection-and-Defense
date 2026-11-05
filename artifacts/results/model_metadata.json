@@ -1,0 +1,46 @@
+{
+  "model_type": "RandomForestClassifier",
+  "scikit_learn_version": "1.9.1",
+  "seed": 20261025,
+  "classes": [
+    "ai_agent",
+    "human_like",
+    "script"
+  ],
+  "feature_columns": [
+    "request_count",
+    "mean_interval_ms",
+    "std_interval_ms",
+    "requests_per_second",
+    "duration_ms",
+    "unique_path_ratio",
+    "path_sequence_score",
+    "error_rate",
+    "repetition_rate",
+    "unique_payload_ratio",
+    "ua_anomaly_rate",
+    "mean_response_bytes"
+  ],
+  "sample_counts": {
+    "ai_agent": 50,
+    "human_like": 50,
+    "script": 50
+  },
+  "split_counts": {
+    "train": 90,
+    "validation": 30,
+    "test": 30
+  },
+  "defense_policy": {
+    "mode": "enforce",
+    "threshold": 0.9500000000000004,
+    "validation_ai_block_rate": 1.0,
+    "validation_human_false_block_rate": 0.0,
+    "selection_method": "causal_validation_prefixes"
+  },
+  "training_rows": 90,
+  "validation_rows": 30,
+  "test_rows": 30,
+  "feature_table_sha256": "65a64cee033e64870f71cdd35e92eaa080a89fffc48a1f05a3e3fb06d2610a89",
+  "raw_events_sha256": "caa510e7659d9a1a4a3fcc8b612cb95c9edca3fbf342642b308da427824e12a8"
+}

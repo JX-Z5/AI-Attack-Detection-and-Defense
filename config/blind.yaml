@@ -1,0 +1,32 @@
+seed: 20261103
+ai_model: falcon3:3b
+ai_sessions: 100
+script_sessions: 100
+human_like_sessions: 100
+min_requests_per_session: 6
+max_requests_per_session: 10
+time_scale: 0.0
+ollama_base_url: http://ollama:11434
+gateway_url: http://gateway:8080
+ai_temperature: 0.75
+ai_max_retries: 2
+prompt_profiles:
+  - methodical
+  - cautious
+  - exploratory
+  - adaptive
+attack_tasks:
+  - sqli
+  - sqli_blind
+script_profiles:
+  - stealth_burst
+  - adaptive_order
+human_profiles:
+  - bursty_recovery
+  - careful_backtrack
+defense:
+  warmup_requests: 4
+  max_human_like_false_block_rate: 0.10
+  threshold_min: 0.05
+  threshold_max: 0.95
+  threshold_step: 0.01

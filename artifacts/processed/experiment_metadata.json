@@ -1,0 +1,16 @@
+{
+  "seed": 20261025,
+  "configured_sessions_per_class": 50,
+  "completed_sessions": {
+    "ai_agent": 50,
+    "human_like": 50,
+    "script": 50
+  },
+  "event_count": 1190,
+  "model": "llama3.2:3b",
+  "ollama_version": "0.40.6",
+  "ollama_container_image": "alpine/ollama:latest",
+  "human_class": "human-like simulation",
+  "elapsed_seconds": 1684.1363894939423,
+  "failures": []
+}

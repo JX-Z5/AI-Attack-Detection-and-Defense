@@ -1,0 +1,12 @@
+{
+  "frozen_at_utc": "2026-11-02T04:24:38.657839+00:00",
+  "model_type": "RandomForestClassifier with validation-frozen behavioral rule",
+  "scikit_learn_version": "1.9.1",
+  "seed": 20261102,
+  "training_rows": 1200,
+  "prefix_training_rows": 4212,
+  "feature_table_sha256": "b70e8d7b5793d13291589bbdbba1d8878d01777897b062bee77b682e753e0173",
+  "raw_events_sha256": "780074debd2fc6b5d9a12602d1e6230093206cac163bd7da98b3cce1ec3298f9",
+  "bundle_sha256": "7ddc4054e02ba343463be4afeb4d3c4db874bbd700697923ab0c72ca3719fb3e",
+  "metrics_sha256": "2b8b58729a91d255a3f279dd53bfa8d620ac02af14b6c5981d5969e1de0fc658"
+}
